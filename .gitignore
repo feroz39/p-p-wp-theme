@@ -1,0 +1,60 @@
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Node dependencies and build artifacts
+node_modules/
+npm-debug.log
+yarn-error.log
+dist/
+build/
+
+# Composer vendor directory
+/vendor/
+
+# SASS / SCSS cache
+.sass-cache/
+*.css.map
+*.scssc
+
+# Log files
+*.log
+
+# IDEs and editors
+*.sublime-project
+*.sublime-workspace
+.vscode/
+.idea/
+
+# WordPress specific
+wp-content/plugins/
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+
+# Ignore everything in wp-content except themes/your-theme
+wp-content/*
+!wp-content/themes/
+!wp-content/themes/your-theme-name/
+
+# Optional: if developing inside a local WP environment
+wp-config.php
+.htaccess
+.env
+.env.*
+.local/
+
+# Theme files to ignore
+*.zip
+*.bak
+*.orig
+*.tmp
+*.swp
+*.sass-cache
+*.swo
+
+# Build artifacts and cache
+.cache/
+.eslintcache
+.stylelintcache

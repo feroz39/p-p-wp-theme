@@ -1,49 +1,80 @@
 <?php get_header(); ?>
-<section id="home-hero" class="relative h-screen">
-  <div class="h-screen px-6 bg-brand/90 md:px-12 bg-blend-multiply">
-    <div class="relative z-10 flex flex-col justify-center h-screen mx-auto font-sans font-light text-white max-w-7xl">
-      <div class="flex items-center justify-between max-w-3xl">
-        <div class="">
-          <h1 class="py-2 font-serif text-4xl font-medium tracking-tight md:text-6xl">Creating a shared investment journey in Australian real estate.</h1>
-          <p class="mt-4 text-lg">An investor-first commercial property syndicator in Australia, providing transparent investment journeys through managed property funds. Don’t just invest in real estate—own it, alongside us.</p>
-          <div class="h-6"></div>
-          <div class="items-center font-sans cursor-pointer text-orange group w-fit">
-            <div class="inline-flex">
-              <a title="about-us" class="text-lg leading-none" href="/about-us">Get to know us</a>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-5 h-5 ml-2 transition-transform duration-300 text-orange group-hover:translate-x-2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
-              </svg>
+
+<div class="min-h-screen">
+  <div style="opacity: 1;">
+    <main>
+      <div id="motion-section">
+        <section class="relative z-10 px-12">
+          <div class="max-w-screen-xl pt-40 mx-auto md:pt-64">
+            <h1 class="text-lg text-orange md:w-7/12">Insights</h1>
+            <div
+              class="mt-4 prose prose-lg prose-h2:text-5xl prose-h2:font-medium prose-h2:font-serif prose-h2:tracking-tight prose-h2:text-brand prose-h2:mb-4 prose-h3:text-orange prose-h3:text-base prose-h3:font-normal prose-h4:text-brand prose-h4:text-base"
+            >
+              <h2>News and views straight from the experts.</h2>
+              <h3>Check out our weekly article updates, featuring insights into Australia's property market, expert views from our team and exclusive news about our own investments.</h3>
             </div>
-            <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-[1px] bg-orange"></span>
           </div>
-        </div>
+        </section>
       </div>
-    </div>
-    <div class="absolute z-30 flex px-6 py-4 text-white transition-colors duration-300 rounded-lg group/button md:right-24 bottom-16 bg-orange hover:bg-brand md:px-8">
-      <a target="" class="inline-flex font-sans text-white cursor-pointer" href="https://www.propertiesandpathways.com.au/assets/capital-growth-fund-2">
-        <p class="">View our latest investment</p>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon" class="w-5 h-5 ml-2 text-white transition-transform duration-300 group-hover/button:translate-x-2">
-          <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"></path>
-        </svg>
-      </a>
-    </div>
+      <?php
+      $args = [
+        'post_type' => 'post',
+        'posts_per_page' => -1, // Change to desired number of posts per page
+      ];
+
+      $query = new WP_Query($args);?>
+      <?php if ( $query->have_posts() ) : ?>
+      <div id="motion-section">
+        <section class="px-12 py-40">
+          <div class="grid max-w-screen-xl grid-cols-3 gap-12 mx-auto mt-24">
+            <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+              <a class="group/postcard" title="Why WALE Matters When Selling Your Commercial Asset" href="<?php the_permalink(); ?>">
+                <div class="overflow-hidden font-sans transition-all duration-300 rounded-lg group-hover/postcard:shadow-lg group bg-beige group-hover/postcard:-translate-y-1 group-hover/postcard:bg-darkbeige">
+                  <div class="relative overflow-hidden aspect-video">
+                    <?php if ( has_post_thumbnail() ) : 
+                      $thumbnail_url = get_the_post_thumbnail_url( get_the_ID(), 'medium' );
+                    ?>
+                      <img
+                        alt="<?php the_title_attribute(); ?>"
+                        width="1600"
+                        height="1600"
+                        class="absolute inset-0 object-cover transition-transform duration-700 group-hover/postcard:scale-110"
+                        loading="lazy"
+                        src="<?php echo esc_url( $thumbnail_url ); ?>"
+                      />
+                    <?php endif; ?>
+                    
+                  </div>
+                  <div class="p-10">
+                    <h2 class="sm:min-h-[58px] text-xl text-orange sm:line-clamp-2"><?php the_title(); ?></h2>
+                    <p class="mt-4 font-light line-clamp-3 sm:line-clamp-2 text-brand"><?php echo wp_trim_words(get_the_excerpt(), 20); ?></p>
+                    <div class="h-4"></div>
+                    <div class="text-base font-normal w-fit text-orange">
+                      <div class="flex items-center">
+                        Read more
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon" class="w-4 h-4 ml-2 transition duration-300 ease-in-out group-hover/postcard:translate-x-2">
+                          <path
+                            fill-rule="evenodd"
+                            d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                      </div>
+                      <span class="block max-w-0 group-hover/postcard:max-w-full transition-all duration-500 h-[1px] bg-orange"></span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            <?php endwhile; ?>
+            <?php wp_reset_postdata(); ?>
+          </div>
+        </section>
+      </div>
+      <?php else : ?>
+        <p>No posts found.</p>
+      <?php endif; ?>
+    </main>
   </div>
-  <img
-    alt="Journey Lines Graphic"
-    width="1300"
-    height="1300"
-    class="absolute bottom-0 right-0 z-0 object-cover object-left-top px-6 overflow-hidden bg-transparent h-1/4 md:w-3/4"
-    src="<?php echo get_template_directory_uri(); ?>/assets/img/journey-lines-orange.svg"
-  />
-  <img
-    alt="Aerial view of Perth city skyline"
-    width="1200"
-    height="1200"
-    class="absolute inset-0 -z-10 h-screen max-h-[1100px] min-h-[900px] object-cover w-full md:hidden"
-    src="https://pandp-admin.com/wp-content/uploads/2025/05/home-hero-video-image-optimised.webp"
-  />
-  <video autoplay="" loop="" id="bg" muted="" class="absolute inset-0 -z-10 h-screen max-h-[1100px] min-h-[900px] object-cover grayscale w-full hidden md:block" src="https://pandp-admin.com/wp-content/uploads/2025/05/home-hero-video.mp4"></video>
-</section>
-<?php wp_footer(); ?>
-</body>
-</html>
+</div>
+
+<?php get_footer(); ?>

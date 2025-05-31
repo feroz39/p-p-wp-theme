@@ -20,7 +20,16 @@
             src="<?php echo get_template_directory_uri(); ?>/assets/img/P&P_LOGO_blue_orange.webp"
           />
         </a>
-        <?php get_template_part('parts/desktop-nav', null, ['dark'=>false]); ?>
+        <a class="block lg:absolute group-hover/menu:lg:opacity-0 transition-opacity group-[.menu-open]/header:lg:hidden group-[.menu-open]/header:lg:opacity-0 lg:opacity-100" href="/">
+          <img
+            alt="Properties & Pathways"
+            width="144"
+            height="48"
+            class="h-auto w-36 lg:w-44"
+            src="<?php echo get_template_directory_uri(); ?>/assets/img/P&P_LOGO_white_orange.webp"
+          />
+        </a>
+        <?php get_template_part('parts/desktop-nav', null, ['dark'=>true]); ?>
       </div>
       <div class="lg:hidden">
         <button>

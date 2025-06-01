@@ -1,7 +1,7 @@
 <?php 
 /* Template Name: Home Page Template */ 
 ?>
-<?php get_header('dark'); ?> 
+<?php get_header('dark'); ?>
 <section id="home-hero" class="relative h-screen">
   <div class="h-screen px-6 bg-brand/90 md:px-12 bg-blend-multiply">
     <div class="relative z-10 flex flex-col justify-center h-screen mx-auto font-sans font-light text-white max-w-7xl">
@@ -598,4 +598,4 @@
     </div>
   </section>
 
-<?php get_footer(); ?>
+<?php get_footer('cta'); ?>

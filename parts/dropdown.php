@@ -6,7 +6,7 @@ $acf    = $args['dropdown_acf'] ?? [];
 // echo '</pre>';
 ?>
 
-<div class="dropdown-menu absolute top-10 left-0 w-full opacity-0 peer-[.is-open]:opacity-100 h-[0px] peer-[.is-open]:h-[224px]">
+<div class="dropdown-menu absolute top-12 left-0 w-full opacity-0 peer-[.is-open]:opacity-100 h-[0px] peer-[.is-open]:h-[280px] overflow-hidden">
   <div class="mt-16 inline-flex h-[224px] max-h-[224px] w-full bg-white px-12 pb-8">
     <div class="flex max-w-6xl mx-auto">
 

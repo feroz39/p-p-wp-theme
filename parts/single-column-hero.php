@@ -3,7 +3,7 @@
     <div class="px-8">
         <div class="relative z-20 pt-32 pb-16 mx-auto max-w-7xl md:pb-36 md:pt-48">
             <div class="text-white md:w-3/5 lg:w-1/2">
-                <h1 class="font-sans text-lg font-medium text-orange">Industrial Property Investment</h1>
+                <h1 class="font-sans text-lg font-medium text-orange"><?php the_title(); ?></h1>
                 <?php if(get_field('heading')) : ?>
                 <h2 class="mt-4 font-serif text-4xl font-medium text-white md:text-5xl"><?php the_field('heading'); ?></h2>
                 <?php endif; ?>

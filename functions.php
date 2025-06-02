@@ -3,6 +3,7 @@
 require_once get_template_directory() . '/inc/enqueue.php';
 require_once get_template_directory() . '/inc/menu.php';
 require_once get_template_directory() . '/inc/assets-cpt.php';
+require_once get_template_directory() . '/inc/testimonials-cpt.php';
 
 function pp_register_menus() {
 	register_nav_menus([

@@ -36,4 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     header.classList.remove('menu-open');
   });
+
+  var testimonialCarousel = new Splide('.testimonial-carousel', {
+    type: 'fade',
+    rewind: true,
+    pagination: false,
+    arrows: true,
+  });
+  testimonialCarousel.mount();
 });

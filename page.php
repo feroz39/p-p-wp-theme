@@ -28,6 +28,7 @@
 			<?php get_template_part( 'parts/intro-panel', null, null ); ?>
 			<?php get_template_part( 'parts/horizontal-panel', null, null ); ?>
 			<?php get_template_part( 'parts/body-section', null, null ); ?>
+			<?php get_template_part( 'parts/testimonial-section', null, null ); ?>
 			<?php get_template_part( 'parts/accordion', null, null ); ?>
       
       <?php endwhile; ?>

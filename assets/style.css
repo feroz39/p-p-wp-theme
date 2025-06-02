@@ -1505,6 +1505,9 @@
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
   }
+  .px-10 {
+    padding-inline: calc(var(--spacing) * 10);
+  }
   .px-12 {
     padding-inline: calc(var(--spacing) * 12);
   }
@@ -1716,6 +1719,9 @@
   .delay-150 {
     transition-delay: 150ms;
   }
+  .delay-300 {
+    transition-delay: 300ms;
+  }
   .duration-100 {
     --tw-duration: 100ms;
     transition-duration: 100ms;
@@ -1871,6 +1877,26 @@
       }
     }
   }
+  .group-\[\.blue-active\]\:\!w-full {
+    &:is(:where(.group):is(.blue-active) *) {
+      width: 100% !important;
+    }
+  }
+  .group-\[\.blue-active\]\:\!flex-shrink {
+    &:is(:where(.group):is(.blue-active) *) {
+      flex-shrink: 1 !important;
+    }
+  }
+  .group-\[\.blue-active\]\:\!flex-grow {
+    &:is(:where(.group):is(.blue-active) *) {
+      flex-grow: 1 !important;
+    }
+  }
+  .group-\[\.blue-active\]\:delay-300 {
+    &:is(:where(.group):is(.blue-active) *) {
+      transition-delay: 300ms;
+    }
+  }
   .group-\[\.menu-open\]\/header\:z-40 {
     &:is(:where(.group\/header):is(.menu-open) *) {
       z-index: 40;
@@ -1889,6 +1915,33 @@
   .group-\[\.menu-open\]\/header\:opacity-100 {
     &:is(:where(.group\/header):is(.menu-open) *) {
       opacity: 100%;
+    }
+  }
+  .group-\[\.orange-active\]\:\!w-full {
+    &:is(:where(.group):is(.orange-active) *) {
+      width: 100% !important;
+    }
+  }
+  .group-\[\.orange-active\]\:\!flex-shrink {
+    &:is(:where(.group):is(.orange-active) *) {
+      flex-shrink: 1 !important;
+    }
+  }
+  .group-\[\.orange-active\]\:\!flex-grow {
+    &:is(:where(.group):is(.orange-active) *) {
+      flex-grow: 1 !important;
+    }
+  }
+  .group-\[\.orange-active\]\:delay-300 {
+    &:is(:where(.group):is(.orange-active) *) {
+      transition-delay: 300ms;
+    }
+  }
+  .peer-hover\:\!flex-shrink {
+    &:is(:where(.peer):hover ~ *) {
+      @media (hover: hover) {
+        flex-shrink: 1 !important;
+      }
     }
   }
   .peer-\[\.is-open\]\:h-\[280px\] {
@@ -1913,6 +1966,20 @@
     }
     &::-webkit-details-marker {
       color: #2B3990;
+    }
+  }
+  .hover\:\!w-full {
+    &:hover {
+      @media (hover: hover) {
+        width: 100% !important;
+      }
+    }
+  }
+  .hover\:\!flex-grow {
+    &:hover {
+      @media (hover: hover) {
+        flex-grow: 1 !important;
+      }
     }
   }
   .hover\:scale-110 {
@@ -2199,6 +2266,12 @@
       width: calc(var(--spacing) * 40);
     }
   }
+  .md\:translate-y-36 {
+    @media (width >= 48rem) {
+      --tw-translate-y: calc(var(--spacing) * 36);
+      translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
+  }
   .md\:grid-cols-3 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2324,6 +2397,64 @@
   .md\:opacity-0 {
     @media (width >= 48rem) {
       opacity: 0%;
+    }
+  }
+  .md\:opacity-100 {
+    @media (width >= 48rem) {
+      opacity: 100%;
+    }
+  }
+  .group-\[\.blue-active\]\:md\:translate-y-36 {
+    &:is(:where(.group):is(.blue-active) *) {
+      @media (width >= 48rem) {
+        --tw-translate-y: calc(var(--spacing) * 36);
+        translate: var(--tw-translate-x) var(--tw-translate-y);
+      }
+    }
+  }
+  .group-\[\.blue-active\]\:md\:\!justify-between {
+    &:is(:where(.group):is(.blue-active) *) {
+      @media (width >= 48rem) {
+        justify-content: space-between !important;
+      }
+    }
+  }
+  .group-\[\.blue-active\]\:md\:opacity-100 {
+    &:is(:where(.group):is(.blue-active) *) {
+      @media (width >= 48rem) {
+        opacity: 100%;
+      }
+    }
+  }
+  .group-\[\.orange-active\]\:md\:translate-y-36 {
+    &:is(:where(.group):is(.orange-active) *) {
+      @media (width >= 48rem) {
+        --tw-translate-y: calc(var(--spacing) * 36);
+        translate: var(--tw-translate-x) var(--tw-translate-y);
+      }
+    }
+  }
+  .group-\[\.orange-active\]\:md\:\!justify-between {
+    &:is(:where(.group):is(.orange-active) *) {
+      @media (width >= 48rem) {
+        justify-content: space-between !important;
+      }
+    }
+  }
+  .group-\[\.orange-active\]\:md\:opacity-100 {
+    &:is(:where(.group):is(.orange-active) *) {
+      @media (width >= 48rem) {
+        opacity: 100%;
+      }
+    }
+  }
+  .hover\:md\:\!justify-between {
+    &:hover {
+      @media (hover: hover) {
+        @media (width >= 48rem) {
+          justify-content: space-between !important;
+        }
+      }
     }
   }
   .lg\:absolute {

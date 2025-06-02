@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     header.classList.remove('menu-open');
   });
 
+  /* Trigger Testimonial Carousel */
   var testimonialCarousel = new Splide('.testimonial-carousel', {
     type: 'fade',
     rewind: true,
@@ -44,4 +45,22 @@ document.addEventListener('DOMContentLoaded', () => {
     arrows: true,
   });
   testimonialCarousel.mount();
+
+  /* Active/Deactive CTA */
+  const ctaContainer = document.getElementById('cta');
+  const ctaBlue = document.getElementById('cta-blue');
+  const ctaOrange = document.getElementById('cta-orange');
+
+  ctaBlue.addEventListener('mouseenter', () => {
+    ctaContainer.classList.add('blue-active');
+  });
+  ctaBlue.addEventListener('mouseleave', () => {
+    ctaContainer.classList.remove('blue-active');
+  });
+  ctaOrange.addEventListener('mouseenter', () => {
+    ctaContainer.classList.add('orange-active');
+  });
+  ctaOrange.addEventListener('mouseleave', () => {
+    ctaContainer.classList.remove('orange-active');
+  });
 });

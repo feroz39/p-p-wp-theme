@@ -38,13 +38,29 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* Trigger Testimonial Carousel */
-  var testimonialCarousel = new Splide('.testimonial-carousel', {
-    type: 'fade',
-    rewind: true,
-    pagination: false,
-    arrows: true,
-  });
-  testimonialCarousel.mount();
+  var testimonialSelector = document.querySelector('.testimonial-carousel');
+  if (testimonialSelector) {
+    var testimonialCarousel = new Splide('.testimonial-carousel', {
+      type: 'fade',
+      rewind: true,
+      pagination: false,
+      arrows: true,
+    });
+    testimonialCarousel.mount();
+  }
+
+  /* Trigger Featured Carousel */
+  var featuredSelector = document.querySelector('.featured-carousel');
+  if (featuredSelector) {
+    var featuredCarousel = new Splide('.featured-carousel', {
+      type: 'slide',
+      rewind: true,
+      pagination: true,
+      paginationDirection: 'ltr',
+      arrows: true,
+    });
+    featuredCarousel.mount();
+  }
 
   /* Active/Deactive CTA */
   const ctaContainer = document.getElementById('cta');

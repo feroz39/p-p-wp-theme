@@ -30,6 +30,8 @@
 			<?php get_template_part( 'parts/body-section', null, null ); ?>
 			<?php get_template_part( 'parts/testimonial-section', null, null ); ?>
 			<?php get_template_part( 'parts/accordion', null, null ); ?>
+			<?php get_template_part( 'parts/featured-asset', null, null ); ?>
+			<?php get_template_part( 'parts/content-marketing', null, null ); ?>
       
       <?php endwhile; ?>
 

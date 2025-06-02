@@ -10,7 +10,7 @@
     $background_color = get_sub_field('background_color');
     $page_link = get_sub_field('page_link');
 ?>
-<section id="body-section" class="px-6 border-b py-36 md:px-12 border-b-neutral-200 bg-beige">
+<section id="body-section" class="px-6 border-b py-36 md:px-12 border-b-neutral-200 <?= $background_color == "beige" ? "bg-beige" : "bg-white" ?>">
     <?php if($title): ?>
     <div class="grid max-w-screen-xl mx-auto"><h2 class="font-serif text-3xl font-medium text-brand"><?= esc_html( $title ); ?></h2></div>
     <?php endif; ?>

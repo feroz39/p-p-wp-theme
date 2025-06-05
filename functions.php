@@ -4,6 +4,7 @@ require_once get_template_directory() . '/inc/enqueue.php';
 require_once get_template_directory() . '/inc/menu.php';
 require_once get_template_directory() . '/inc/assets-cpt.php';
 require_once get_template_directory() . '/inc/testimonials-cpt.php';
+require_once get_template_directory() . '/inc/utility.php';
 
 function pp_register_menus() {
 	register_nav_menus([
@@ -66,3 +67,20 @@ if (function_exists('add_theme_support'))
 //     $category = get_category($category_id);
 //     return home_url(user_trailingslashit($category->slug));
 // }, 10, 2);
+
+// add_action('after_switch_theme', function () {
+//     flush_rewrite_rules();
+// });
+
+// add_action('init', function () {
+//     global $wp_rewrite;
+//     $rules = $wp_rewrite->rewrite_rules();
+//     echo '<pre>';
+//     foreach ($rules as $rule => $query) {
+//         if (str_contains($rule, 'assets/category')) {
+//             echo $rule . ' => ' . $query . "\n";
+//         }
+//     }
+//     echo '</pre>';
+//     exit;
+// });

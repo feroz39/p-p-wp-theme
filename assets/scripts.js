@@ -62,21 +62,59 @@ document.addEventListener('DOMContentLoaded', () => {
     featuredCarousel.mount();
   }
 
+  /* Trigger Featured Carousel */
+  var cardSelector = document.querySelector('.cards-carousel');
+  if (cardSelector) {
+    var cardCarousel = new Splide('.cards-carousel', {
+      type: 'slide',
+      rewind: false,
+      pagination: false,
+      arrows: true,
+      perPage: 3,
+      gap: '2rem',
+      start: 0,
+      focus: 0,
+      breakpoints: {
+        480: {
+          perPage: 1,
+        },
+        767: {
+          perPage: 2,
+        },
+      },
+    });
+    cardCarousel.mount();
+  }
+
+  /* Trigger Asset Carousel */
+  var assetSelectors = document.getElementsByClassName('asset-carousel');
+  if (assetSelectors) {
+    for (var i = 0; i < assetSelectors.length; i++) {
+      new Splide(assetSelectors[i], {
+        type: 'fade',
+        rewind: true,
+        arrows: true,
+      }).mount();
+    }
+  }
+
   /* Active/Deactive CTA */
   const ctaContainer = document.getElementById('cta');
   const ctaBlue = document.getElementById('cta-blue');
   const ctaOrange = document.getElementById('cta-orange');
 
-  ctaBlue.addEventListener('mouseenter', () => {
-    ctaContainer.classList.add('blue-active');
-  });
-  ctaBlue.addEventListener('mouseleave', () => {
-    ctaContainer.classList.remove('blue-active');
-  });
-  ctaOrange.addEventListener('mouseenter', () => {
-    ctaContainer.classList.add('orange-active');
-  });
-  ctaOrange.addEventListener('mouseleave', () => {
-    ctaContainer.classList.remove('orange-active');
-  });
+  if (ctaBlue && ctaOrange && ctaContainer) {
+    ctaBlue.addEventListener('mouseenter', () => {
+      ctaContainer.classList.add('blue-active');
+    });
+    ctaBlue.addEventListener('mouseleave', () => {
+      ctaContainer.classList.remove('blue-active');
+    });
+    ctaOrange.addEventListener('mouseenter', () => {
+      ctaContainer.classList.add('orange-active');
+    });
+    ctaOrange.addEventListener('mouseleave', () => {
+      ctaContainer.classList.remove('orange-active');
+    });
+  }
 });

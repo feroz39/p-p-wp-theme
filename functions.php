@@ -11,6 +11,7 @@ function pp_register_menus() {
 		'header-menu'  => __('Header Menu', 'pp'),
 		'sidebar-menu' => __('Sidebar Menu', 'pp'),
 		'extra-menu'   => __('Extra Menu', 'pp'),
+		'footer-menu'   => __('Footer Menu', 'pp'),
 	]);
 }
 add_action('init', 'pp_register_menus');
@@ -41,46 +42,27 @@ if (function_exists('add_theme_support'))
 }
 
 
+// Remove category base
+add_filter('category_rewrite_rules', function ($category_rewrite) {
+    $categories = get_categories(['hide_empty' => false]);
+    $new_rules = [];
+    foreach ($categories as $category) {
+        $slug = $category->slug;
+        $new_rules[$slug . '/(.*)$'] = 'index.php?category_name=' . $slug . '/$matches[1]';
+        $new_rules[$slug . '$'] = 'index.php?category_name=' . $slug;
+    }
+    return $new_rules;
+});
 
-// Remove 'category' base
-// add_filter('category_rewrite_rules', function($category_rewrite) {
-//     $category_rewrite = [];
-//     $categories = get_categories(['hide_empty' => false]);
-//     foreach ($categories as $category) {
-//         $category_nicename = $category->slug;
-//         if ($category->parent == $category->cat_ID) {
-//             $category->parent = 0;
-//         } elseif ($category->parent != 0) {
-//             $category_nicename = get_category_parents($category->parent, false, '/', true) . $category_nicename;
-//         }
-//         $category_rewrite['(' . $category_nicename . ')/?$'] = 'index.php?category_name=$matches[1]';
-//         $category_rewrite['(' . $category_nicename . ')/page/?([0-9]{1,})/?$'] = 'index.php?category_name=$matches[1]&paged=$matches[2]';
-//     }
-//     return $category_rewrite;
-// });
+add_filter('request', function ($query_vars) {
+    if (isset($query_vars['category_name'])) {
+        $query_vars['category_name'] = str_replace('category/', '', $query_vars['category_name']);
+    }
+    return $query_vars;
+});
 
-// add_filter('generate_rewrite_rules', function($wp_rewrite) {
-//     $wp_rewrite->rules = array_merge(apply_filters('category_rewrite_rules', []), $wp_rewrite->rules);
-// });
-
-// add_filter('category_link', function($catlink, $category_id) {
-//     $category = get_category($category_id);
-//     return home_url(user_trailingslashit($category->slug));
-// }, 10, 2);
-
-// add_action('after_switch_theme', function () {
-//     flush_rewrite_rules();
-// });
-
-// add_action('init', function () {
-//     global $wp_rewrite;
-//     $rules = $wp_rewrite->rewrite_rules();
-//     echo '<pre>';
-//     foreach ($rules as $rule => $query) {
-//         if (str_contains($rule, 'assets/category')) {
-//             echo $rule . ' => ' . $query . "\n";
-//         }
-//     }
-//     echo '</pre>';
-//     exit;
-// });
+add_action('init', function () {
+    global $wp_rewrite;
+    $wp_rewrite->use_verbose_page_rules = true;
+    $wp_rewrite->flush_rules();
+});

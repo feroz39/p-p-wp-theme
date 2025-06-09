@@ -27,7 +27,7 @@ $dark  = $args['dark'] ?? [];
                 <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z" clip-rule="evenodd"></path>
             </svg>
             </div>
-            <?php get_template_part('parts/dropdown', null, ['dropdown_items' => $item['children'], 'dropdown_acf' => $acf]); ?>
+            <?php get_template_part('parts/molecules/dropdown', null, ['dropdown_items' => $item['children'], 'dropdown_acf' => $acf]); ?>
         </div>
         <?php else: ?>
             <a class="text-base font-normal cursor-pointer <?php echo esc_attr($item['description']); ?>" target="<?php echo esc_attr($item['target']); ?>" href="<?php echo esc_attr($item['url']); ?>"><?php echo esc_html($item['title']); ?></a>

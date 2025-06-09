@@ -117,4 +117,26 @@ document.addEventListener('DOMContentLoaded', () => {
       ctaContainer.classList.remove('orange-active');
     });
   }
+
+  /* Tabs */
+  const tabs = document.querySelectorAll('[role="tablist"] [role="tab"]');
+  const panels = document.querySelectorAll('[role="tabpanels"] [role="tabpanel"]');
+
+  if (tabs && panels) {
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const selectedIndex = tab.getAttribute('data-tab');
+
+        // Update tab selection
+        tabs.forEach((t) => t.setAttribute('aria-selected', 'false'));
+        tab.setAttribute('aria-selected', 'true');
+
+        // Update panel visibility
+        panels.forEach((panel) => {
+          const isMatch = panel.getAttribute('data-panel') === selectedIndex;
+          panel.hidden = !isMatch;
+        });
+      });
+    });
+  }
 });

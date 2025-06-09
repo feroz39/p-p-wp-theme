@@ -1,5 +1,6 @@
 <?php
 $images = $args['gallery'] ?? '';
+$id = $args['id'] ?? 'default-id';
 if( !empty($images) ):
 ?>
 <section class="splide asset-carousel">
@@ -13,13 +14,14 @@ if( !empty($images) ):
   </div>
   <div class="splide__track">
     <ul class="splide__list">
-      <?php foreach( $images as $image ): ?>
+      <?php foreach( $images as $index => $image ): ?>
       <li class="splide__slide">
         <img
           alt="<?= esc_attr($image['alt']); ?>"
           loading="lazy"
           width="800"
           height="800"
+          data-modal-target="asset-carousel-<?= $id; ?>-model-<?= $index; ?>"
           class="object-cover w-full rounded-lg cursor-pointer aspect-video"
           src="<?= esc_url($image['url']); ?>"
         />

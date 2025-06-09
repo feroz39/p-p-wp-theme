@@ -50,12 +50,17 @@
 						<?php if(!empty($toplinks)): ?>
 							<?php foreach($toplinks as $link): ?>
 								<?php
-									get_template_part( 'parts/atoms/text-button', null, [
-										"textColor"=>"text-orange",
-										"text"=>$link["link"]["title"],
-										"slug"=>$link["link"]["url"],
-										"target"=>$link["link"]["target"]
-									] )	;
+									// echo '<pre>';
+									// var_dump($link);
+									// echo '</pre>';
+									if($link['link']){
+										get_template_part( 'parts/atoms/text-button', null, [
+											"textColor"=>"text-orange",
+											"text"=>$link["link"]["title"],
+											"slug"=>$link["link"]["url"],
+											"target"=>$link["link"]["target"]
+										] )	;
+									}
 								?>
 							<?php endforeach; ?>
 						<?php endif; ?>
@@ -128,12 +133,13 @@
 			<?php endif; ?>
 
 			<?php if($cta): ?>
-				<?php 
-				// echo '<pre>';
-				// var_dump($cta);
-				// echo '</pre>';
-				?>
 				<?php get_template_part( 'parts/molecules/cta-asset', null, $cta[0]['cta'] ); ?>
+			<?php endif; ?>
+
+			<?php if (have_rows('performance_content')): ?>
+				<?php while (have_rows('performance_content')): the_row(); ?>
+					<?php get_template_part( 'parts/past-performance', null, null ); ?>
+				<?php endwhile; ?>
 			<?php endif; ?>
 
     <?php endwhile; endif; ?>

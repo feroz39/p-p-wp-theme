@@ -1,0 +1,141 @@
+.gform_wrapper {
+  @apply !block w-full rounded-lg p-0;
+}
+
+.gform_body {
+  @apply mb-5;
+}
+
+.gform_fields {
+  @apply space-y-6;
+}
+.gform_fields .gfield {
+  @apply my-0 !px-0 text-sm;
+}
+
+.gfield_label {
+  @apply mb-1 block font-sans text-sm leading-6 !font-light;
+}
+
+.gform-field-label--type-sub {
+  @apply !hidden;
+}
+.gform_legacy_markup_wrapper .gform_footer {
+  @apply !m-0 !p-0;
+}
+
+.gform_wrapper input[type='text'],
+.gform_wrapper input[type='tel'],
+.gform_wrapper input[type='number'],
+.gform_wrapper input[type='email'],
+.gform_wrapper textarea,
+.gform_wrapper select {
+  @apply bg-beige text-brand ring-beige block w-full rounded-lg border-0 px-3.5 py-3 font-sans ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-indigo-600 focus:ring-inset sm:text-sm sm:leading-5;
+}
+.gfield_description,
+.gfield_label {
+  @apply mt-2 block font-sans text-sm leading-6 font-light;
+}
+.ginput_container_checkbox,
+.ginput_container_radio {
+  @apply relative mt-1;
+}
+.gfield_checkbox,
+.gfield_radio {
+  @apply mb-2 flex flex-col gap-2 font-sans text-sm font-light;
+}
+input[type='checkbox'] {
+  @apply !bg-beige !mr-2 !rounded-sm !border-none;
+}
+.gfield_checkbox [type='checkbox']:checked,
+.gfield_radio [type='radio']:checked {
+  @apply !bg-brand;
+}
+input[type='radio'] {
+  @apply bg-beige mr-2 rounded-full border-none;
+}
+.textarea {
+  @apply bg-beige text-brand ring-beige block w-full rounded-lg border-0 px-3.5 py-2 font-sans ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-indigo-600 focus:ring-inset sm:text-sm sm:leading-6;
+}
+@media (max-width: 1023px) {
+  .gform_wrapper {
+    @apply px-5;
+  }
+}
+.gform_button {
+  @apply !bg-orange hover:!bg-brand !block !inline-flex cursor-pointer !items-center !justify-center !rounded-md !px-8 !py-3 text-center font-sans !text-lg text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2;
+}
+
+.gform_wrapper,
+.gform_wrapper h2 {
+  @apply !m-0 border-0 p-0;
+}
+
+.gform_wrapper.gform_legacy_markup_wrapper
+  input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='button']):not(
+    [type='image']
+  ):not([type='file']) {
+  @apply px-3 py-3.5;
+}
+
+body .gform_legacy_markup_wrapper .top_label div.ginput_container {
+  @apply !mt-1;
+}
+
+body .gform_legacy_markup_wrapper ul li.gfield:first-child {
+  @apply !mt-0;
+}
+
+body .gform_legacy_markup_wrapper ul li.gfield {
+  @apply !mt-4;
+}
+
+body .gform_legacy_markup_wrapper ul li.gfield:not(.gfield--type-html) {
+  @apply !mt-2;
+}
+
+/* Dark Form theme */
+.dark-gf .gform_button {
+  @apply !bg-orange !w-full hover:opacity-90 focus-visible:outline-indigo-600;
+}
+
+/* GF Error*/
+@media only screen and (min-width: 641px) {
+  body
+    .gform_legacy_markup_wrapper.gform_validation_error
+    .gform_body
+    ul
+    li.gfield.gfield_error:not(.gf_left_half):not(.gf_right_half) {
+    max-width: calc(100%) !important;
+  }
+}
+body .gform_legacy_markup_wrapper li.gfield.gfield_error,
+body
+  .gform_legacy_markup_wrapper
+  li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+  @apply !bg-transparent;
+  margin-bottom: 6px !important;
+  border-top: 0px solid #c89797;
+  border-bottom: 0px solid #c89797;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  box-sizing: border-box;
+}
+div.gform_validation_errors {
+  @apply !hidden;
+}
+.dark-gf .gform_legacy_markup_wrapper .validation_message {
+  @apply text-sm !font-normal !text-white;
+}
+.gform_legacy_markup_wrapper .validation_message {
+  @apply !text-brand text-sm !font-normal;
+}
+.dark-gf .gform_legacy_markup_wrapper .gfield_error .gfield_label {
+  @apply !text-white;
+}
+.gform_legacy_markup_wrapper .gfield_error .gfield_label {
+  @apply !text-brand text-sm !font-normal;
+}
+.dark-gf .gform_legacy_markup_wrapper .gfield_error .gfield_label {
+  @apply !text-white;
+}

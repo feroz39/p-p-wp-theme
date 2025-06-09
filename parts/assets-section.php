@@ -36,7 +36,8 @@
           <?php endif; ?>
         </div>
 			<?php else: ?>
-				<?php get_template_part( 'parts/molecules/asset-carousel', null, ['gallery'=>$gallery] ); ?>
+				<?php $random = bin2hex(random_bytes(4)); ?>
+				<?php get_template_part( 'parts/molecules/asset-carousel', null, ['gallery'=>$gallery, 'id'=>$random] ); ?>
 			<?php endif; ?>
 		</div>
 	</div>

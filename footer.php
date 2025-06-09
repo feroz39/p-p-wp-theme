@@ -53,24 +53,30 @@
       </div>
     </div>
     <div class="flex flex-col justify-around mt-6 space-y-6 md:w-7/12 md:flex-row md:mt-0 md:space-y-0">
-      <div class="flex flex-col w-full space-y-3 md:w-40">
-        <a class="mb-4 text-base text-orange" href="/investments">Investments</a><a class="text-base leading-6 text-brand" href="/investments/income-focused-investments">Income Focused Investments</a>
-        <a class="text-base leading-6 text-brand" href="/investments/capital-growth-funds">Capital Growth Funds</a><a class="text-base leading-6 text-brand" href="/investments/balanced-property-funds">Balanced Property Funds</a>
-      </div>
-      <div class="flex flex-col w-full space-y-3 md:w-40">
-        <a class="mb-4 text-base text-orange" href="/investors">Investors</a><a class="text-base leading-6 text-brand" href="/investors/family-office">Family Office</a>
-        <a class="text-base leading-6 text-brand" href="/investors/private-investors">Private Investors</a><a class="text-base leading-6 text-brand" href="/investors/institutional-investors">Institutional Investors</a>
-        <a class="text-base leading-6 text-brand" href="/investors/new-to-investing">New to Investing</a>
-      </div>
-      <div class="flex flex-col w-full space-y-3 md:w-40">
-        <a class="mb-4 text-base text-orange" href="/assets">Assets</a><a class="text-base leading-6 text-brand" href="/assets/category/current-assets">Current Assets</a>
-        <a class="text-base leading-6 text-brand" href="/assets/category/previous-assets">Previous Assets</a>
-      </div>
-      <div class="flex flex-col w-full space-y-3 md:w-40">
-        <a class="mb-4 text-base text-orange" href="/about-us">About</a><a class="text-base leading-6 text-brand" href="/about-us/our-story">Our Story</a> <a class="text-base leading-6 text-brand" href="/about-us/our-team">Our Team</a>
-        <a class="text-base leading-6 text-brand" href="/about-us/why-choose-us">Why Choose Us</a> <a class="text-base leading-6 text-brand" href="/disclosure">Disclosure</a>
-        <a class="text-base leading-6 text-brand" href="/contact">Contact Us</a>
-      </div>
+      <?php $menu_tree = pp_get_menu_tree('footer-menu'); ?>
+
+      <?php if (!empty($menu_tree)): ?>
+        <?php foreach ($menu_tree as $item): ?>
+          <?php if (!empty($item['children'])): ?>
+            <div class="flex flex-col w-full space-y-3 md:w-40">
+              <a class="mb-4 text-base text-orange" href="/investments">
+                <?php echo esc_html($item['title']); ?>
+              </a>
+              <?php foreach ($item['children'] as $child): ?>
+                <a class="text-base leading-6 text-brand" href="<?php echo esc_url($child['url']); ?>">
+                  <?php echo esc_html($child['title']); ?>
+                </a>
+              <?php endforeach; ?>
+            </div>
+          <?php else: ?>
+            <div class="flex flex-col w-full space-y-3 md:w-40">
+              <a class="mb-4 text-base text-orange" href="/investments">
+                <?php echo esc_html($item['title']); ?>
+              </a>
+            </div>
+          <?php endif; ?>
+        <?php endforeach; ?>
+      <?php endif; ?>
     </div>
   </div>
   <div class="max-w-screen-xl pt-16 mx-auto border-t lg:flex lg:items-center lg:justify-between xl:mt-0">

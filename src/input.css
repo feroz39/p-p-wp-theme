@@ -55,6 +55,7 @@
   --font-stem: 'Stem';
 }
 @config "../tailwind.config.js";
+@import './gravityforms.css';
 
 @layer components {
   .form-input,

@@ -139,4 +139,17 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  /* Scroll Progress in Articel */
+  const progressBar = document.getElementById('scroll-progress');
+
+  if (progressBar) {
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = scrollTop / docHeight;
+
+      progressBar.style.transform = `scaleX(${scrollPercent})`;
+    });
+  }
 });

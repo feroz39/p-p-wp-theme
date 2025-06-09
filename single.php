@@ -3,7 +3,7 @@
 <main>
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
   <article class="relative z-20 px-6 md:px-12">
-    <div class="progress-bar" style="transform: scaleX(0.792717) translateZ(0px);"></div>
+    <div class="progress-bar" id="scroll-progress" style="transform: scaleX(0);"></div>
     <section class="max-w-screen-xl pt-40 mx-auto md:pt-64">
 		<?php
 		$categories = get_the_terms(get_the_ID(), 'category');

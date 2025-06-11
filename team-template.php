@@ -1,3 +1,7 @@
+<?php 
+/* Template Name: Team Page Template */ 
+?>
+
 <?php if (have_rows('components')): ?>
   <?php while (have_rows('components')): the_row(); ?>
     <?php if (get_row_layout() === 'header_section_white'): ?>
@@ -35,7 +39,7 @@
 			<?php get_template_part( 'parts/body-section', null, null ); ?>
 			<?php get_template_part( 'parts/featured-asset', null, null ); ?>
 			<?php get_template_part( 'parts/content-marketing', null, null ); ?>
-      <?php get_template_part( 'parts/card-section', null, ["type"=>""] ); ?>
+      <?php get_template_part( 'parts/card-section', null, ["type"=>"team"] ); ?>
 			<?php get_template_part( 'parts/accordion', null, null ); ?>
 			<?php get_template_part( 'parts/testimonial-section', null, null ); ?>
       

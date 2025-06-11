@@ -15,8 +15,8 @@
 // echo '</pre>';
 ?>
 
-<section id="cards-section">
-	<div class="relative z-10 px-6 md:px-12 flex flex-col-reverse md:flex-col overflow-hidden <?= esc_attr($type === '' ? 'pt-36 md:pt-64' : 'py-36');?>">
+<section id="cards-section" class="<?= esc_attr($type === 'team'? 'bg-beige' : '');?>">
+	<div class="relative z-10 px-6 md:px-12 flex flex-col-reverse md:flex-col overflow-hidden <?= esc_attr($type === '' ? 'pt-36 md:pt-64' : ($type === 'team'? 'py-12 md:py-36' : 'py-36'));?>">
 		<div class="w-full max-w-screen-xl pt-10 mx-auto md:pt-0">
 			<div class="md:w-1/2">
 				<?php if($title): ?>
@@ -32,27 +32,47 @@
 			</div>
 			<?php if($layout == "grid") : ?>
 				<?php if(!empty($card_item)) : ?>
-					<div class="mx-auto grid max-w-screen-xl grid-cols-1 gap-8 pt-28  md:pt-40 relative z-10 <?= count($card_item) === 1 ? "md:grid-cols-1" : (count($card_item) === 2 ? "md:grid-cols-2" : (count($card_item) === 3 ? "md:grid-cols-3" : "md:grid-cols-4")); ?>">
-						<?php foreach($card_item as $item): ?>
+					<div class="mx-auto grid max-w-screen-xl grid-cols-1 gap-8 pt-28 md:pt-40 relative z-10 <?= count($card_item) === 1 ? "md:grid-cols-1" : (count($card_item) === 2 ? "md:grid-cols-2" : (count($card_item) === 3 ? "md:grid-cols-3" : "md:grid-cols-4")); ?> <?= $type === "team" ? "gap-y-12 !pt-0": ""; ?>">
+						<?php foreach($card_item as $index => $item): ?>
 							<?php 
+							$page_id = url_to_postid($item["page_link"]);
+							$title = get_the_title($page_id);
+							$excerpt = get_the_excerpt( $page_id );
+							$thumbnail_url = get_the_post_thumbnail_url($page_id, 'full');
 							// echo '<pre>';
-							// var_dump($item["link_text"]);
+							// var_dump($thumbnail_url);
 							// echo '</pre>';
 							?>
 							<?php 
-								get_template_part( 
-								'parts/molecules/image-card', 
-								null, 
-								[
-									"coverImage"=> $item["cover_image"],
-									"title"=> $item["title"],
-									"slug"=> $item["link"],
-									"label"=> $item["label"],
-									"excerpt"=> $item["text"],
-									"isLinkNewTab"=> $item["link"] ? true : false,
-									"linkText"=> $item["link_text"],
-									"card_style"=> $card_style,
-								]);
+								if($type === "team"){
+									get_template_part( 
+									'parts/molecules/team-card', 
+									null, 
+									[
+										"coverImage"=> !empty($item["cover_image"]) ? $item["cover_image"] : $thumbnail_url,
+										"title"=> $item["title"],
+										"slug"=> $item["page_link"],
+										"excerpt"=> $excerpt,
+										"card_style"=> $card_style,
+										"type"=>$type,
+										"index"=>$index
+									]);
+								}else{
+									get_template_part( 
+									'parts/molecules/image-card', 
+									null, 
+									[
+										"coverImage"=> !empty($item["cover_image"]) ? $item["cover_image"] : $thumbnail_url,
+										"title"=> $item["title"],
+										"slug"=> $item["link"],
+										"label"=> $item["label"],
+										"excerpt"=> $item["text"],
+										"isLinkNewTab"=> $item["link"] ? true : false,
+										"linkText"=> $item["link_text"],
+										"card_style"=> $card_style,
+										"type"=>$type
+									]);
+								}
 							?>
 						<?php endforeach; ?>
 					</div>

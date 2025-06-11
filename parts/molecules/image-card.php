@@ -26,7 +26,7 @@ $isLinkNewTab = $args['isLinkNewTab'] ?? false;
                         "width"=> "500", 
                         "height"=>"500", 
                         "alt"=> "Cover Image for".$title, 
-                        "src"=>$coverImage["url"],
+                        "src" => is_array($coverImage) && !empty($coverImage['url']) ? $coverImage['url'] : $coverImage,
                         "classWrapper"=> $card_style == "cardService" ? "overflow-hidden flex-none img-zoom rounded-t-md rounded-b-none" : "overflow-hidden flex-none img-zoom rounded-md",
                         "imageWrapper"=> $card_style !== "cardService" ? "cursor-pointer object-cover aspect-square rounded-md" : "cursor-pointer object-cover aspect-video"
                     ]
@@ -62,7 +62,7 @@ $isLinkNewTab = $args['isLinkNewTab'] ?? false;
                         "width"=> "500", 
                         "height"=>"500", 
                         "alt"=> "Cover Image for".$title, 
-                        "src"=>$coverImage["url"],
+                        "src" => is_array($coverImage) && !empty($coverImage['url']) ? $coverImage['url'] : $coverImage,
                         "classWrapper"=> $card_style == "cardService" ? "overflow-hidden flex-none img-zoom rounded-t-md rounded-b-none" : "overflow-hidden flex-none img-zoom rounded-md",
                         "imageWrapper"=> $card_style !== "cardService" ? "cursor-pointer object-cover aspect-square rounded-md" : "cursor-pointer object-cover aspect-video"
                     ]

@@ -4,7 +4,9 @@ require_once get_template_directory() . '/inc/enqueue.php';
 require_once get_template_directory() . '/inc/menu.php';
 require_once get_template_directory() . '/inc/assets-cpt.php';
 require_once get_template_directory() . '/inc/testimonials-cpt.php';
+require_once get_template_directory() . '/inc/team-tenant-cpt.php';
 require_once get_template_directory() . '/inc/utility.php';
+require_once get_template_directory() . '/inc/remove-base-cat.php';
 
 function pp_register_menus() {
 	register_nav_menus([
@@ -42,27 +44,3 @@ if (function_exists('add_theme_support'))
 }
 
 
-// Remove category base
-add_filter('category_rewrite_rules', function ($category_rewrite) {
-    $categories = get_categories(['hide_empty' => false]);
-    $new_rules = [];
-    foreach ($categories as $category) {
-        $slug = $category->slug;
-        $new_rules[$slug . '/(.*)$'] = 'index.php?category_name=' . $slug . '/$matches[1]';
-        $new_rules[$slug . '$'] = 'index.php?category_name=' . $slug;
-    }
-    return $new_rules;
-});
-
-add_filter('request', function ($query_vars) {
-    if (isset($query_vars['category_name'])) {
-        $query_vars['category_name'] = str_replace('category/', '', $query_vars['category_name']);
-    }
-    return $query_vars;
-});
-
-add_action('init', function () {
-    global $wp_rewrite;
-    $wp_rewrite->use_verbose_page_rules = true;
-    $wp_rewrite->flush_rules();
-});

@@ -103,16 +103,16 @@
 			<?php if($content): ?>
 			<section class="px-6 bg-beige md:px-12 py-36">
 				<div class="max-w-screen-xl mx-auto">
-				<div class="md:w-8/12">
-					<div class="font-serif text-3xl font-medium text-brand">
-					<?= $content ; ?>
+					<div class="md:w-8/12">
+						<div class="font-serif text-3xl font-medium text-brand">
+						<?= $content ; ?>
+						</div>
 					</div>
-				</div>
-				<div class="h-28"></div>
+					<div class="h-28"></div>
 
-							<?php if(!empty($keystats)): ?>
-								<?php get_template_part( 'parts/key-stats', null, ["stats"=>$keystats, "type"=>2] ) ?>
-				<?php endif; ?>
+					<?php if(!empty($keystats)): ?>
+						<?php get_template_part( 'parts/key-stats', null, ["stats"=>$keystats, "type"=>2] ) ?>
+					<?php endif; ?>
 				</div>
 			</section><?php endif; ?>
 

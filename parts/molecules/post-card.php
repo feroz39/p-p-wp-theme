@@ -7,11 +7,19 @@
     $slug = get_post_field('post_name', $post_id);
     $excerpt = get_the_excerpt( $post_id );
     $thumbnail_url = get_the_post_thumbnail_url($post_id, 'full');
-    $cat = get_categories( $post_id )
+    $cats = get_the_category( $post_id );
+    if (!empty($cats)) {
+    foreach ($cats as $cat) {
+        if ($cat->category_parent != 0) {
+            $first_subcategory = $cat;
+            break;
+        }
+    }
+}
 ?>
 <?php 
 // echo '<pre>';
-// var_dump($cat);
+// var_dump($first_subcategory);
 // echo '</pre>';
 ?>
 
@@ -28,9 +36,10 @@
         /><?php endif; ?>
         </div>
         <div class="p-10">
+        <?php if($first_subcategory): ?>
         <p class="mb-2 text-sm font-medium text-brand">
-            <?= esc_html( $cat[0]->name ) ?>
-        </p>
+            <?= esc_html( $first_subcategory->name ) ?>
+        </p><?php endif; ?>
         <h2 class="sm:min-h-[58px] text-xl text-orange sm:line-clamp-2">
             <?= esc_html( $title ) ?>
         </h2>

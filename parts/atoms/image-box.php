@@ -8,7 +8,7 @@ $classWrapper = $args['classWrapper'] ?? "";
 ?>
 
 <?php if($src): ?>
-<div class="bg-orange <?= esc_attr($classWrapper ? $classWrapper : ""); ?>">
+<div class="<?= esc_attr($classWrapper ? $classWrapper : "bg-orange"); ?>">
     <img
         width="<?= esc_attr( $width ) ?>"
         height="<?= esc_attr( $height ) ?>"

@@ -23,14 +23,14 @@
         <?php get_template_part('parts/desktop-nav', null, ['dark'=>false]); ?>
       </div>
       <div class="lg:hidden">
-        <button>
+        <button id="mobile-nav">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-white">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
           </svg>
         </button>
       </div>
     </div>
-    <nav class="absolute inset-0 z-40 block bg-brand lg:hidden" style="opacity: 0; transform: translateX(-100%) translateZ(0px);">
+    <nav class="absolute inset-0 z-40 block bg-brand lg:hidden group-[.mobile-menu-open]/header:opacity-100 group-[.mobile-menu-open]/header:translate-[0%] duration-300 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)]">
       <div class="p-6 mt-36">
         <ul class="flex flex-col items-start right grow">
           <li class="relative flex flex-col w-full py-5 cursor-pointer group">

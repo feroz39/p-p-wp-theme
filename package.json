@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "style": "npx @tailwindcss/cli -i ./src/input.css -o ./assets/style.css --watch --content ./**/*.{html,php,js}"
+    "style": "npx @tailwindcss/cli -i ./src/input.css -o ./assets/style.css --watch --content ./**/*.{html,php,js}",
+    "style-prod": "npx @tailwindcss/cli -i ./src/input.css -o ./assets/style.css --content ./**/*.{html,php,js}"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.7",

@@ -12,13 +12,13 @@ $isLinkNewTab = $args['isLinkNewTab'] ?? false;
 ?>
 <?php 
 // echo '<pre>';
-// var_dump($type);
+// var_dump($slug);
 // echo '</pre>';
 ?>
 
 <div id="team-card-<?= esc_attr( $index ); ?>" class="h-full overflow-hidden team-card rounded-b-md">
     <?php if($slug): ?>
-        <a title="Guy Doggett" href="/team/guy-doggett">
+        <a title="Guy Doggett" href="<?= esc_attr( $slug ); ?>">
             <div class="flex-none overflow-hidden rounded-md bg-orange img-zoom">
             <?php 
                 get_template_part( 

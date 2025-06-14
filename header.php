@@ -7,7 +7,7 @@
 <?php wp_head(); ?>
 </head>
 
-<body class="<?php body_class() ?>">
+<body <?php body_class('overflow-x-hidden') ?>>
   <header class="group/header">
     <div class="absolute inset-x-0 top-0 z-50 flex flex-row items-center justify-between h-28 px-6 py-8 overflow-hidden transition-all duration-500 ease-in-out bg-transparent lg:flex-col hover:lg:bg-white hover:drop-shadow-md group/menu hover:bg-transparent group group-[.menu-open]/header:h-[400px] group-[.menu-open]/header:lg:bg-white ">
       <div class="relative flex items-center justify-between w-full">

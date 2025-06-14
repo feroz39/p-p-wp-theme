@@ -30,7 +30,7 @@
 .gform_wrapper input[type='email'],
 .gform_wrapper textarea,
 .gform_wrapper select {
-  @apply bg-beige text-brand ring-beige block w-full rounded-lg border-0 px-3.5 py-3 font-sans ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-indigo-600 focus:ring-inset sm:text-sm sm:leading-5;
+  @apply bg-beige text-brand ring-beige block w-full rounded-lg border-0 !px-3.5 !py-3 font-sans ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-indigo-600 focus:ring-inset sm:text-sm sm:leading-5;
 }
 .gfield_description,
 .gfield_label {
@@ -45,7 +45,7 @@
   @apply mb-2 flex flex-col gap-2 font-sans text-sm font-light;
 }
 input[type='checkbox'] {
-  @apply !bg-beige !mr-2 !rounded-sm !border-none;
+  @apply !bg-beige !m-0 !mr-2 !rounded-sm !border-none;
 }
 .gfield_checkbox [type='checkbox']:checked,
 .gfield_radio [type='radio']:checked {
@@ -55,7 +55,7 @@ input[type='radio'] {
   @apply bg-beige mr-2 rounded-full border-none;
 }
 .textarea {
-  @apply bg-beige text-brand ring-beige block w-full rounded-lg border-0 px-3.5 py-2 font-sans ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-indigo-600 focus:ring-inset sm:text-sm sm:leading-6;
+  @apply bg-beige text-brand ring-beige block !h-24 w-full rounded-lg border-0 !px-3.5 !py-2 font-sans ring-1 ring-inset placeholder:text-gray-400 focus:ring-2 focus:ring-indigo-600 focus:ring-inset sm:text-sm sm:leading-6;
 }
 @media (max-width: 1023px) {
   .gform_wrapper {
@@ -79,7 +79,7 @@ input[type='radio'] {
 }
 
 body .gform_legacy_markup_wrapper .top_label div.ginput_container {
-  @apply !mt-1;
+  @apply !mt-4;
 }
 
 body .gform_legacy_markup_wrapper ul li.gfield:first-child {
@@ -92,6 +92,9 @@ body .gform_legacy_markup_wrapper ul li.gfield {
 
 body .gform_legacy_markup_wrapper ul li.gfield:not(.gfield--type-html) {
   @apply !mt-2;
+}
+li.gchoice.gchoice_26_22_1 {
+  overflow: unset !important;
 }
 
 /* Dark Form theme */

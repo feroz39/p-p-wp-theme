@@ -3,6 +3,9 @@
  <?php
     $left_content = get_sub_field('left_content');
     $right_content = get_sub_field('right_content');
+    // echo '<pre>';
+    // var_dump($left_content);
+    // echo '</pre>';
 ?>
 <section class="px-6 bg-white border-b border-b-neutral-200 py-36 md:px-12" id="body-column-2">
     <div class="mx-auto max-w-7xl">

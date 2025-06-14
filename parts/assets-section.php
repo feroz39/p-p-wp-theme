@@ -21,10 +21,10 @@
 		</div>
 		<div class="mb-12 md:w-5/12 md:mb-0">
 			<?php if($imageorstat == "stat"): ?>
-				<div class="text-base bg-white border rounded-lg bg-opacity-80">
+				<div class="text-base border border-gray-200 rounded-lg bg-white/80">
           <?php if(!empty($stats)): ?>
           	<?php foreach ($stats as $stat): ?>
-              <div class="flex flex-col items-start p-5 border-b md:flex-row md:justify-between">
+              <div class="flex flex-col items-start p-5 border-b border-gray-200 md:flex-row md:justify-between">
                 <p class="font-semibold md:w-2/5">
 									<?= esc_html( $stat["title"] ); ?>
 								</p>

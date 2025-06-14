@@ -59,15 +59,19 @@
     height="1300"
     class="absolute bottom-0 right-0 z-0 object-cover object-left-top px-6 overflow-hidden bg-transparent h-1/4 md:w-3/4"
     src="<?= get_template_directory_uri(  ); ?>/assets/img/journey-lines-orange.svg"
-  />
-  <img
-    alt="Aerial view of Perth city skyline"
-    width="1200"
-    height="1200"
-    class="absolute inset-0 -z-10 h-screen max-h-[1100px] min-h-[900px] object-cover w-full md:hidden"
-    src="<?= get_template_directory_uri(  ); ?>/assets/img/home-hero-video-image-optimised.jpg"
-  />
-  <video autoplay="" loop="" id="bg" muted="" class="absolute inset-0 -z-10 h-screen max-h-[1100px] min-h-[900px] object-cover grayscale w-full hidden md:block" src="<?= get_template_directory_uri(  ); ?>/assets/img/home-hero-video.mp4"></video>
+  />  
+  <video
+    autoplay
+    loop
+    muted
+    playsinline
+    preload="none"
+    poster="<?= get_template_directory_uri(); ?>/assets/img/home-hero-video-image-optimised.jpg"
+    class="absolute inset-0 -z-10 h-screen max-h-[1100px] min-h-[900px] object-cover grayscale w-full hidden md:block"
+  >
+    <source src="<?= get_template_directory_uri(); ?>/assets/img/home-hero-video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 </section>
 
 <?php endif; ?>

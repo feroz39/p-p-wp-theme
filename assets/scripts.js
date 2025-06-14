@@ -58,16 +58,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (mtoggles) {
     mtoggles.forEach((mtoggle) => {
-      mtoggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        e.preventDefault();
-        // const menuItem = toggle.parentElement;
-        if (mtoggle.classList.contains('is-open')) {
-          mtoggle.classList.remove('is-open');
-        } else {
-          mtoggle.classList.add('is-open');
-        }
-      });
+      const innerDiv = mtoggle.querySelector('div');
+      if (innerDiv) {
+        innerDiv.addEventListener('click', (e) => {
+          e.stopPropagation();
+          e.preventDefault();
+          if (mtoggle.classList.contains('is-open')) {
+            mtoggle.classList.remove('is-open');
+          } else {
+            mtoggle.classList.add('is-open');
+          }
+        });
+      }
     });
   }
 

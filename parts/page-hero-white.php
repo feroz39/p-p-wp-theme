@@ -63,7 +63,7 @@
             alt="Cover Image for <?= esc_attr($title); ?>"
             height="<?= esc_attr( $image_position === 'full' ? '2400' : '650' ) ?>"
             width="<?= esc_attr( $image_position === 'full' ? '2400' : '650' ) ?>"
-            class="<?= esc_attr( $image_position === 'full' ? 'h-[350px] md:h-[500px] object-cover' : 'md:absolute relative flex inset-y-0 -right-6 md:right-0 md:mt-28 h-auto md:h-[650px] md:w-6/12 lg:w-5/12 2xl:w-5/12 object-contain object-right' ) ?>"
+            class="md:h-[500px] <?= esc_attr( $image_position === 'full' ? 'h-[350px] object-cover' : 'md:absolute relative flex inset-y-0 -right-6 md:right-0 md:mt-28 h-auto md:w-6/12 lg:w-5/12 2xl:w-5/12 object-contain object-right' ) ?>"
         >
     <?php endif; ?>
 

@@ -2541,6 +2541,16 @@
       opacity: 100%;
     }
   }
+  .group-\[\.mobile-menu-open\]\/header\:block {
+    &:is(:where(.group\/header):is(.mobile-menu-open) *) {
+      display: block;
+    }
+  }
+  .group-\[\.mobile-menu-open\]\/header\:hidden {
+    &:is(:where(.group\/header):is(.mobile-menu-open) *) {
+      display: none;
+    }
+  }
   .group-\[\.mobile-menu-open\]\/header\:translate-0 {
     &:is(:where(.group\/header):is(.mobile-menu-open) *) {
       --tw-translate-x: calc(var(--spacing) * 0);

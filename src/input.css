@@ -84,10 +84,6 @@
     @apply hover:bg-orange/80 mt-4 transition-colors duration-75 ease-linear;
   }
 
-  .gfield > label {
-    @apply block text-sm leading-6 font-light text-white;
-  }
-
   .section-form .gfield label,
   .section-form .gfield legend {
     @apply text-brand block font-sans text-sm leading-6 font-light;
@@ -118,6 +114,9 @@
   .footer-signup form button {
     @apply bg-orange mt-0 flex w-28 flex-none items-center justify-center rounded-lg px-5 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500;
   }
+}
+* {
+  @apply border-gray-200;
 }
 
 /* Your own custom utilities */
@@ -520,4 +519,15 @@ body {
 [type='checkbox']:checked,
 [type='radio']:checked {
   background-color: currentColor !important;
+}
+
+.acf-map {
+  width: 100%;
+  border: #ccc solid 1px;
+  margin: 20px 0;
+}
+
+// Fixes potential theme css conflict.
+.acf-map img {
+  max-width: inherit !important;
 }

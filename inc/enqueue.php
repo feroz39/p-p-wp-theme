@@ -15,5 +15,6 @@ function mytheme_enqueue_assets() {
     wp_enqueue_script('splidejs-scripts', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js', array(), file_exists($main_js) ? filemtime($main_js) : null, true);
     wp_enqueue_script('alpine-scripts', 'https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js', array(), file_exists($main_js) ? filemtime($main_js) : null, true);
     wp_enqueue_script('candly-scripts', 'https://assets.calendly.com/assets/external/widget.js', array(), file_exists($main_js) ? filemtime($main_js) : null, true);
+    wp_enqueue_script('google-maps-api', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDg0ElJgumVma58m5pNuBWHd83cL5VmD-c', null, null, true);
 }
 add_action('wp_enqueue_scripts', 'mytheme_enqueue_assets');

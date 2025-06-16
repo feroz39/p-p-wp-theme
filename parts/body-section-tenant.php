@@ -14,7 +14,7 @@
 
 <?php 
 // echo '<pre>';
-// var_dump($cards);
+// var_dump($map);
 // echo '</pre>';
 ?>
 
@@ -54,7 +54,7 @@
 						<?php 
 						if( $map ): ?>
 							<div class="w-full mt-2 acf-map aspect-video" data-zoom="16">
-									<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
+									<div class="marker" data-lat="<?php echo esc_attr($map['lat']); ?>" data-lng="<?php echo esc_attr($map['lng']); ?>"></div>
 							</div>
 						<?php endif; ?>
 					</div><?php endif; ?>

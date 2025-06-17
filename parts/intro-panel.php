@@ -20,7 +20,7 @@
         <div id="intro" class="w-full <?= $layout == 'full' ? 'md:w-8/12' : 'md:pr-32'; ?>">
             <p class="text-lg text-orange" style="opacity: 1;"><?= esc_html( $title ); ?></p>
             <h2 class="mt-4 font-serif text-3xl font-medium" style="opacity: 1;"><?= esc_html( $sub_title ); ?></h2>
-            <p class="mt-2 text-lg" style="opacity: 1;"><?= esc_html( $text ); ?></p>
+            <p class="mt-2 text-lg font-light" style="opacity: 1;"><?= esc_html( $text ); ?></p>
         </div>
         <?php if (!empty($cards)): ?>
         <div class="grid grid-cols-1 gap-4 pt-24 sm:grid-cols-2 md:grid-cols-4 md:gap-6">

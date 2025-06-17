@@ -1,5 +1,8 @@
 <?php
 
+require_once get_template_directory() . '/inc/env-loader.php';
+load_env(get_template_directory() . '/.env');
+
 require_once get_template_directory() . '/inc/enqueue.php';
 require_once get_template_directory() . '/inc/menu.php';
 require_once get_template_directory() . '/inc/assets-cpt.php';

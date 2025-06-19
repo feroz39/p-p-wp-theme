@@ -87,7 +87,14 @@ body .gform_legacy_markup_wrapper ul li.gfield:first-child {
 }
 
 body .gform_legacy_markup_wrapper ul li.gfield {
-  @apply !mt-4;
+  @apply !mt-5;
+}
+
+body .gform_legacy_markup_wrapper div.gfield {
+  @apply !mt-5;
+}
+body .gform_legacy_markup_wrapper fieldset.gfield {
+  @apply !mt-5;
 }
 
 body .gform_legacy_markup_wrapper ul li.gfield:not(.gfield--type-html) {

@@ -188,4 +188,27 @@ document.addEventListener('DOMContentLoaded', () => {
       progressBar.style.transform = `scaleX(${scrollPercent})`;
     });
   }
+
+  /* Add Lagacy markup wrapper to all GF */
+  const gfWrapper = document.querySelector('.gform_wrapper');
+
+  if (gfWrapper) {
+    if (!gfWrapper.classList.contains('gform_legacy_markup_wrapper')) {
+      gfWrapper.classList.add('gform_legacy_markup_wrapper');
+      gfWrapper.classList.add('gform-theme--no-framework');
+      gfWrapper.dataset.formTheme = 'legacy';
+    }
+    if (gfWrapper.classList.contains('gform-theme')) {
+      gfWrapper.classList.remove('gform-theme');
+    }
+    if (gfWrapper.classList.contains('gform-theme--orbital')) {
+      gfWrapper.classList.remove('gform-theme--orbital');
+    }
+    if (gfWrapper.classList.contains('gform-theme--foundation')) {
+      gfWrapper.classList.remove('gform-theme--foundation');
+    }
+    if (gfWrapper.classList.contains('gform-theme--framework')) {
+      gfWrapper.classList.remove('gform-theme--framework');
+    }
+  }
 });

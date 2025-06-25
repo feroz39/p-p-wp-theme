@@ -30,9 +30,9 @@ $link_text = get_field('link_text');
         </p><?php endif; ?>
         <p class="mt-4 font-light"></p>
         <?php if($listingTable): ?>
-        <div class="mt-8 text-sm border rounded-lg bg-beige/80">
+        <div class="mt-8 text-sm border border-gray-200 rounded-lg bg-beige/80">
         <?php foreach ($listingTable as $item): ?>
-        <div class="flex flex-col items-start p-3 border-b md:flex-row md:justify-between">
+        <div class="flex flex-col items-start p-3 border-b border-b-gray-200 md:flex-row md:justify-between last:border-b-0">
             <p class="font-semibold md:w-2/5"><?= esc_html( $item['title'] ); ?></p>
             <div class="md:w-3/5 md:text-right prose-md prose-a:text-orange"><p><?= $item['text']; ?></p></div>
         </div><?php endforeach; ?>

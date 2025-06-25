@@ -73,7 +73,7 @@
       </div>
     </div>
   </div>
-  <div class="max-w-screen-xl pt-16 mx-auto border-t lg:flex lg:items-center lg:justify-between xl:mt-0">
+  <div class="max-w-screen-xl pt-16 mx-auto border-t border-t-gray-200 lg:flex lg:items-center lg:justify-between xl:mt-0">
     <div>
       <h3 class="text-base text-orange">Subscribe to our newsletter</h3>
       <p class="mt-1 text-base">The latest news, articles, and resources, sent to your inbox weekly.</p>

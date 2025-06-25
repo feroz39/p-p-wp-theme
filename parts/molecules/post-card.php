@@ -4,7 +4,7 @@
     
     $post_id = url_to_postid($item["post_link"]);
     $title = get_the_title($post_id);
-    $slug = get_post_field('post_name', $post_id);
+    $slug = $item["post_link"];
     $excerpt = get_the_excerpt( $post_id );
     $thumbnail_url = get_the_post_thumbnail_url($post_id, 'full');
     $cats = get_the_category( $post_id );

@@ -3838,8 +3838,8 @@ footer {
       .gfield_label {
         display: none;
       }
-      .gform-footer.gform_footer.top_label {
-        margin: calc(var(--spacing) * 0);
+      .gfield, .ginput_container, .gform-footer.gform_footer.top_label {
+        margin: calc(var(--spacing) * 0) !important;
       }
       input#input_29_1 {
         margin-top: calc(var(--spacing) * 0);
@@ -3918,6 +3918,9 @@ footer {
         &:focus-visible {
           outline-color: var(--color-indigo-500);
         }
+      }
+      .gform_validation_container {
+        display: none;
       }
     }
   }

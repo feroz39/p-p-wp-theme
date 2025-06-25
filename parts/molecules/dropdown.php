@@ -54,7 +54,7 @@ $acf    = $args['dropdown_acf'] ?? [];
       <?php endif; ?>
 
       <!-- Submenu items (always shown) -->
-      <div class="flex w-[500px] flex-col justify-center space-y-2 border-l pl-12">
+      <div class="flex w-[500px] flex-col justify-center space-y-2 border-l pl-12 border-l-gray-200">
         <?php foreach ($items as $child): ?>
           <a 
           title="<?php echo esc_attr($child['title']); ?>" 

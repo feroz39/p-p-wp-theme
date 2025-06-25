@@ -1765,6 +1765,9 @@
   .border-b-neutral-200 {
     border-bottom-color: var(--color-neutral-200);
   }
+  .border-l-gray-200 {
+    border-left-color: var(--color-gray-200);
+  }
   .border-l-orange {
     border-left-color: #F3703A;
   }

@@ -3564,7 +3564,7 @@
   line-height: var(--tw-leading, var(--text-sm--line-height));
 }
 .gfield_label {
-  margin-bottom: calc(var(--spacing) * 1);
+  margin-bottom: calc(var(--spacing) * 0);
   display: block;
   font-family: var(--font-stem);
   font-size: var(--text-sm);
@@ -3748,22 +3748,22 @@ input[type='radio'] {
   padding-block: calc(var(--spacing) * 3.5);
 }
 body .gform_legacy_markup_wrapper .top_label div.ginput_container {
-  margin-top: calc(var(--spacing) * 4) !important;
+  margin-top: calc(var(--spacing) * 3) !important;
 }
-body .gform_legacy_markup_wrapper ul li.gfield:first-child {
+body .dark-gf .gform_legacy_markup_wrapper .top_label div.ginput_container {
+  margin-top: calc(var(--spacing) * 2) !important;
+}
+body .gform_legacy_markup_wrapper .gfield:first-child {
   margin-top: calc(var(--spacing) * 0) !important;
 }
-body .gform_legacy_markup_wrapper ul li.gfield {
-  margin-top: calc(var(--spacing) * 5) !important;
-}
-body .gform_legacy_markup_wrapper div.gfield {
-  margin-top: calc(var(--spacing) * 5) !important;
+body .gform_legacy_markup_wrapper .gfield {
+  margin-top: calc(var(--spacing) * 4) !important;
 }
 body .gform_legacy_markup_wrapper fieldset.gfield {
   margin-top: calc(var(--spacing) * 5) !important;
 }
-body .gform_legacy_markup_wrapper ul li.gfield:not(.gfield--type-html) {
-  margin-top: calc(var(--spacing) * 2) !important;
+.gform_legacy_markup_wrapper .field_sublabel_hidden_label .ginput_complex.ginput_container input[type='text'], .gform_legacy_markup_wrapper .field_sublabel_hidden_label .ginput_complex.ginput_container select {
+  margin-bottom: calc(var(--spacing) * 0) !important;
 }
 li.gchoice.gchoice_26_22_1 {
   overflow: unset !important;

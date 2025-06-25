@@ -14,7 +14,7 @@
 }
 
 .gfield_label {
-  @apply mb-1 block font-sans text-sm leading-6 !font-light;
+  @apply mb-0 block font-sans text-sm leading-6 !font-light;
 }
 
 .gform-field-label--type-sub {
@@ -79,27 +79,30 @@ input[type='radio'] {
 }
 
 body .gform_legacy_markup_wrapper .top_label div.ginput_container {
-  @apply !mt-4;
+  @apply !mt-3;
+}
+body .dark-gf .gform_legacy_markup_wrapper .top_label div.ginput_container {
+  @apply !mt-2;
 }
 
-body .gform_legacy_markup_wrapper ul li.gfield:first-child {
+body .gform_legacy_markup_wrapper .gfield:first-child {
   @apply !mt-0;
 }
 
-body .gform_legacy_markup_wrapper ul li.gfield {
-  @apply !mt-5;
-}
-
-body .gform_legacy_markup_wrapper div.gfield {
-  @apply !mt-5;
+body .gform_legacy_markup_wrapper .gfield {
+  @apply !mt-4;
 }
 body .gform_legacy_markup_wrapper fieldset.gfield {
   @apply !mt-5;
 }
-
-body .gform_legacy_markup_wrapper ul li.gfield:not(.gfield--type-html) {
-  @apply !mt-2;
+.gform_legacy_markup_wrapper
+  .field_sublabel_hidden_label
+  .ginput_complex.ginput_container
+  input[type='text'],
+.gform_legacy_markup_wrapper .field_sublabel_hidden_label .ginput_complex.ginput_container select {
+  @apply !mb-0;
 }
+
 li.gchoice.gchoice_26_22_1 {
   overflow: unset !important;
 }

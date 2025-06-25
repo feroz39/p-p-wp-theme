@@ -48,6 +48,9 @@
   font-style: normal;
   font-display: swap;
 }
+.border {
+  @apply border-[#ebe6e7];
+}
 
 @import 'tailwindcss';
 @theme {
@@ -114,9 +117,6 @@
   .footer-signup form button {
     @apply bg-orange mt-0 flex w-28 flex-none items-center justify-center rounded-lg px-5 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500;
   }
-}
-* {
-  @apply border-gray-200;
 }
 
 /* Your own custom utilities */

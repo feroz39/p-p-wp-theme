@@ -32,7 +32,7 @@
 		</div><?php endif; ?>
 
 		<div class="md:col-span-4 md:col-start-8 col-span-full">
-			<div class="pl-10 border border-white border-l-orange">
+			<div class="pl-10 border-l border-l-orange">
 				<div class="space-y-10">
 					<?php if($logo): ?>
 					<img

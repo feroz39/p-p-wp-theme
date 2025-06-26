@@ -28,7 +28,7 @@ $featured_posts = get_field('featured_posts', $page->ID);
                 $post = get_post($post_id);
                 $categories = get_the_category($post_id);
             ?>
-                <a id="no-image-card" class="flex flex-col overflow-hidden border-t-2" href="/perths-cbd-office-market-review-q1-2024">
+                <a id="no-image-card" class="flex flex-col overflow-hidden border-t-2 border-gray-200" href="/perths-cbd-office-market-review-q1-2024">
                 <div class="flex flex-col justify-between py-4">
                     <h3 class="text-lg text-orange">
                         <?= $post->post_title; ?>

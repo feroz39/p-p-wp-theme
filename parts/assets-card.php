@@ -23,7 +23,7 @@ $link_text = get_field('link_text');
     </div>
     <div class="flex flex-col justify-between w-full p-8 bg-beige md:p-16 md:w-1/2">
     <div id="" class="">
-        <h3 class="font-serif text-3xl font-medium md:text-4xl text-orange"><?php the_title(); ?></h3>
+        <h3 class="font-serif text-3xl font-medium md:text-4xl"><?php the_title(); ?></h3>
         <?php if($address): ?>
         <p class="mt-1 text-orange">
         <?= esc_html( $address ); ?>

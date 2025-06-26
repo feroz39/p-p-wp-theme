@@ -12,7 +12,7 @@ $tabs = $section['tab'];
 ?>
 <section class="px-6 bg-white border-b border-b-neutral-200 py-36 md:px-12">
   <div class="mx-auto max-w-7xl">
-    <h2 class="font-serif text-3xl font-medium text-brand">Past Performance</h2>
+    <h2 class="font-serif text-4xl font-medium text-brand">Past Performance</h2>
     <div class="flex mt-8 space-x-10 font-sans text-orange" role="tablist">
       <button class="cursor-pointer aria-selected:font-medium" type="button" role="tab" aria-selected="true" data-tab="0">
         <?= $first_tab['tab_name']; ?>

@@ -12,7 +12,7 @@
 ?>
 <section id="body-section" class="px-6 border-b py-36 md:px-12 border-b-neutral-200 <?= $background_color == "beige" ? "bg-beige" : "bg-white" ?>">
     <?php if($title): ?>
-    <div class="grid max-w-screen-xl mx-auto"><h2 class="font-serif text-3xl font-medium text-brand"><?= esc_html( $title ); ?></h2></div>
+    <div class="grid max-w-screen-xl mx-auto"><h2 class="font-serif text-4xl font-medium text-brand"><?= esc_html( $title ); ?></h2></div>
     <?php endif; ?>
     <div class="grid max-w-screen-xl gap-8 mx-auto mt-10 md:grid-cols-12 md:gap-0">
         <div class="md:col-span-6 col-span-full">

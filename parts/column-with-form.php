@@ -17,7 +17,7 @@
                 </h1><?php endif; ?>
 
                 <?php if($left_column['heading']): ?>
-                <h2 class="mt-4 font-serif text-3xl font-medium text-brand">
+                <h2 class="mt-4 font-serif text-4xl font-medium text-brand">
                     <?= esc_html( $left_column['heading'] ); ?>
                 </h2>
                 <div class="mt-4 space-y-4"><?php endif; ?>

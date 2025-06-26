@@ -23,7 +23,7 @@ $post_items = get_sub_field('post_repeater');
         <?= esc_html( $title ); ?>
       </p><?php endif; ?>
       <?php if($text): ?>
-      <h2 class="mt-4 font-serif text-3xl font-medium">
+      <h2 class="mt-4 font-serif text-4xl font-medium">
         <?= esc_html( $text ); ?>
       </h2><?php endif; ?>
       <div class="h-4"></div>

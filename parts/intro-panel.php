@@ -19,7 +19,7 @@
     <div class="max-w-screen-xl mx-auto">
         <div id="intro" class="w-full <?= $layout == 'full' ? 'md:w-8/12' : 'md:pr-32'; ?>">
             <p class="text-lg text-orange" style="opacity: 1;"><?= esc_html( $title ); ?></p>
-            <h2 class="mt-4 font-serif text-3xl font-medium" style="opacity: 1;"><?= esc_html( $sub_title ); ?></h2>
+            <h2 class="mt-4 font-serif text-4xl font-medium" style="opacity: 1;"><?= esc_html( $sub_title ); ?></h2>
             <p class="mt-2 text-lg font-light" style="opacity: 1;"><?= esc_html( $text ); ?></p>
         </div>
         <?php if (!empty($cards)): ?>

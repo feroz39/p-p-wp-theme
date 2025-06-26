@@ -23,7 +23,7 @@
         <?= esc_html( $title ); ?>
       </p><?php endif; ?>
 			<?php if($title): ?>  
-      <h2 class="mt-4 font-serif text-3xl font-medium tracking-tight text-brand">
+      <h2 class="mt-4 font-serif text-4xl font-medium tracking-tight text-brand">
 				<?= esc_html( $sub_title ); ?>
 			</h2><?php endif; ?>
 			<?php if($title): ?>  

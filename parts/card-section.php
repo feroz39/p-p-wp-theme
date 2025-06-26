@@ -26,7 +26,7 @@
 
 
 				<?php if($text): ?>
-				<h2 class="mt-4 font-serif text-3xl font-medium">
+				<h2 class="mt-4 font-serif text-4xl font-medium">
 					<?= esc_html( $text ); ?>
 				</h2><?php endif; ?>
 			</div>

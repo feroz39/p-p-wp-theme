@@ -9,7 +9,7 @@
 ?>
 <section class="px-6 md:px-12 py-36 <?= esc_attr( $backgroundcolor == "beige" ? "bg-beige" : "" ) ?>">
 	<div class="max-w-screen-xl mx-auto">
-		<h2 class="font-serif text-3xl font-medium text-brand">
+		<h2 class="font-serif text-4xl font-medium text-brand">
 			<?= $title;?>
 		</h2>
 	</div>

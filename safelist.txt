@@ -1,1 +1,2 @@
 text-base font-normal cursor-pointer flex items-center justify-center text-orange rounded-lg border font-normal border-orange px-4 py-3 hover:bg-orange hover:text-white transition-all
+border-white group-hover/header:border-orange border-[1px]

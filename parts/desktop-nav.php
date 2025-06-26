@@ -30,7 +30,7 @@ $dark  = $args['dark'] ?? [];
             <?php get_template_part('parts/molecules/dropdown', null, ['dropdown_items' => $item['children'], 'dropdown_acf' => $acf]); ?>
         </div>
         <?php else: ?>
-            <a class="text-base font-normal cursor-pointer <?php echo esc_attr($item['description']); ?>" target="<?php echo esc_attr($item['target']); ?>" href="<?php echo esc_attr($item['url']); ?>"><?php echo esc_html($item['title']); ?></a>
+            <a class="text-base font-normal cursor-pointer <?php echo esc_attr($item['description']); ?> <?= $dark ? "border-white" : "border-orange"; ?>" target="<?php echo esc_attr($item['target']); ?>" href="<?php echo esc_attr($item['url']); ?>"><?php echo esc_html($item['title']); ?></a>
         <?php endif; ?>
     <?php endforeach; ?>
     <?php endif; ?>

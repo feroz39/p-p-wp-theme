@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?php wp_title( '|', true, 'right' ); ?></title>
-<link rel="stylesheet" href="<?php echo esc_url( get_stylesheet_uri() ); ?>" type="text/css" />
-<?php wp_head(); ?>
-</head>
-
-<body <?php body_class('overflow-x-hidden') ?>>
+<?php get_template_part('parts/head', null, []); ?>
   <header class="group/header">
     <div class="absolute inset-x-0 top-0 z-50 flex flex-row items-center justify-between h-28 px-6 py-8 overflow-hidden transition-all duration-500 ease-in-out bg-transparent lg:flex-col hover:lg:bg-white hover:drop-shadow-md group/menu hover:bg-transparent group group-[.menu-open]/header:h-[400px] group-[.menu-open]/header:lg:bg-white ">
       <div class="relative flex items-center justify-between w-full">

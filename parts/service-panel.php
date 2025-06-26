@@ -1,5 +1,5 @@
 <?php if (get_row_layout() === 'services_panel'): ?>
-<!-- ACF: Horizontal Panel -->
+<!-- ACF: Services Panel -->
 
 <?php
     $title = get_sub_field('title');
@@ -48,7 +48,7 @@
 					$thumbnail_url = get_the_post_thumbnail_url($page_id, 'full');
 				?>
 				<?php if ($page_id): ?>
-        <a class="group/postcard" title="Case Study: How we safely doubled our investor’s money (in 2 years)" href="<?= esc_url( $slug ); ?>">
+        <a class="group/postcard" title="<?= esc_attr( $title ) ?>" href="<?= esc_url( $item["page_link"] ); ?>">
 					<div class="overflow-hidden font-sans transition-all duration-300 rounded-lg group-hover/postcard:shadow-lg group bg-beige group-hover/postcard:-translate-y-1 group-hover/postcard:bg-darkbeige">
 						<div class="relative overflow-hidden aspect-video">
 							<?php if( $thumbnail_url): ?>

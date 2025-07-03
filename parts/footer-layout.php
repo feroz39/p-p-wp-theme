@@ -220,5 +220,27 @@
 
   })(jQuery);
 </script>
+<script>
+  (function fillHiddenMarketingFields(retries = 25) {
+    const hutkMatch = document.cookie.match(/hubspotutk=([a-z0-9\-]+)/i);
+    const hutk = hutkMatch ? hutkMatch[1] : '';
+
+    const params = new URLSearchParams(window.location.search);
+
+    function setField(name, value) {
+    const el = document.querySelector(`input[name="${name}"]`);
+    if (el && value) el.value = value;
+    }
+
+    if (document.querySelector('input[name="hubspotutk"]')) {
+    setField('hubspotutk', hutk);
+    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content']
+    .forEach(name => setField(name, params.get(name)));
+    return;
+  }
+
+  if (retries) setTimeout(() => fillHiddenMarketingFields(retries - 1), 200);
+  })();
+</script>
 </body>
 </html>
